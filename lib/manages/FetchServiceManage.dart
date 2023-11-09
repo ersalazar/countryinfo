@@ -1,7 +1,6 @@
 import 'package:countryinfo/manages/RestServiceManage.dart';
 import 'package:http/http.dart' as http;
 
-
 class FetchServiceManage implements RestServiceManage {
   @override
   Future<T> get<T, HttpRequestConfig>(Uri url,

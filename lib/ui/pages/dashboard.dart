@@ -1,5 +1,3 @@
-
-
 import 'package:countryinfo/data/models/article.dart';
 import 'package:countryinfo/data/repositories/news_repository.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +21,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   Future<void> _loadNewsArticles() async {
     final articles = await _newsRepository.fetchNewsArticles();
-    print(articles);
 
     setState(() {
       _articles = articles;
@@ -35,20 +32,45 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('News Dashboard'),
+        backgroundColor: Colors.blue, // Change to your desired color
       ),
-      body: _articles.isNotEmpty // Check if _articles is not empty
+      body: _articles.isNotEmpty
           ? ListView.builder(
               itemCount: _articles.length,
               itemBuilder: (context, index) {
                 final article = _articles[index];
-                return ListTile(
-                  title: Text(article.title),
-                  subtitle: Text(article.description),
-                  // onTap: () => _openArticle(article.url),
+                return Column(
+                  children: <Widget>[
+                    ListTile(
+                      leading: const Icon(Icons.article,
+                          color: Colors.blue), // Use an appropriate icon
+                      title: Text(
+                        article.title,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(article.author),
+                          Text(
+                            article.publishedAt,
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                      trailing: const Icon(Icons
+                          .arrow_forward), // Icon for navigating to the full article
+                      // onTap: () => _openArticle(article.url),
+                    ),
+                    const Divider(), // Add a divider
+                  ],
                 );
               },
             )
-          : const CircularProgressIndicator(),
+          : const Center(
+              child: CircularProgressIndicator(),
+            ),
     );
   }
 }
