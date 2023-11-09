@@ -1,5 +1,6 @@
 import 'package:countryinfo/blocs/auth/auth_bloc.dart';
 import 'package:countryinfo/data/models/user.dart';
+import 'package:countryinfo/ui/app_colors.dart';
 import 'package:countryinfo/ui/pages/dashboard.dart';
 import 'package:countryinfo/ui/pages/home_screen.dart';
 import 'package:countryinfo/ui/pages/widgets/text_input_widget_with_title.dart';
@@ -52,27 +53,41 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
+        backgroundColor: AppColors.primaryColor,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            TextInputWidgetWithTitle(
-              title: 'Email',
-              placeholder: 'youremail@yourcompany.com',
-              controller: emailController,
-            ),
-            TextInputWidgetWithTitle(
-              title: 'Password',
-              placeholder: '********',
-              controller: passwordController,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                _login(context);
-              },
-              child: const Text('Login'),
-            )
-          ],
+      body: Container(
+        color: AppColors.white,
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextInputWidgetWithTitle(
+                title: 'Email',
+                placeholder: 'youremail@yourcompany.com',
+                controller: emailController,
+              ),
+              const SizedBox(height: 16.0),
+              TextInputWidgetWithTitle(
+                title: 'Password',
+                placeholder: '********',
+                controller: passwordController,
+              ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  _login(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.accentColor,
+                ),
+                child: const Text(
+                  'Login',
+                  style: TextStyle(color: AppColors.white),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:countryinfo/ui/app_colors.dart';
 import 'package:countryinfo/ui/pages/widgets/text_input_widget_with_title.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Search"),
+        backgroundColor: AppColors.primaryColor, // Use the primary color from the AppColors class
       ),
       body: Center(
         child: Padding(
@@ -34,6 +36,9 @@ class _SearchScreenState extends State<SearchScreen> {
                   // Implement search functionality here
                   // You can use the value in searchController to perform a search
                 },
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.accentColor, // Use the accent color for the button
+                ),
                 child: const Text("Search"),
               ),
             ],

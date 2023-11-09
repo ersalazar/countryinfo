@@ -1,19 +1,20 @@
+import 'package:countryinfo/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final String userName = "John Doe";
+  final String userBio = "Flutter Developer";
+  final String userImage =
+      "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
+  const ProfileScreen({super.key}); // Replace with actual image path
 
   @override
   Widget build(BuildContext context) {
-    // Replace these with actual user data
-    final String userName = "John Doe";
-    final String userBio = "Flutter Developer";
-    final String userImage =
-        "https://cdn-icons-png.flaticon.com/512/149/149071.png"; // Replace with actual image path
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile"),
+        backgroundColor: AppColors.primaryColor, // Use the primary color from the AppColors class
       ),
       body: Center(
         child: Column(
@@ -21,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 80,
-              backgroundImage: AssetImage(userImage),
+              backgroundImage: NetworkImage(userImage), // Use NetworkImage for online images
             ),
             const SizedBox(height: 16.0),
             Text(
@@ -43,6 +44,9 @@ class ProfileScreen extends StatelessWidget {
               onPressed: () {
                 // Add functionality to edit the profile
               },
+              style: ElevatedButton.styleFrom(
+                primary: AppColors.accentColor, // Use the accent color for the button
+              ),
               child: const Text("Edit Profile"),
             ),
           ],

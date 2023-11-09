@@ -1,4 +1,5 @@
 import 'package:countryinfo/data/models/user.dart';
+import 'package:countryinfo/ui/app_colors.dart';
 import 'package:countryinfo/ui/pages/dashboard.dart';
 import 'package:countryinfo/ui/pages/profile_screen.dart';
 import 'package:countryinfo/ui/pages/search_screen.dart';
@@ -10,6 +11,7 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
+
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
@@ -23,6 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home'),
+        backgroundColor: AppColors.primaryColor, // Use the primary color from the AppColors class
+      ),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
@@ -46,7 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
             _currentIndex = index;
           });
         },
+        backgroundColor: AppColors.primaryColor, // Use the primary color for the bottom navigation bar
       ),
     );
   }
 }
+

@@ -1,5 +1,6 @@
 import 'package:countryinfo/data/models/article.dart';
 import 'package:countryinfo/data/repositories/news_repository.dart';
+import 'package:countryinfo/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('News Dashboard'),
-        backgroundColor: Colors.blue, // Change to your desired color
+        backgroundColor: AppColors.primaryColor, // Use the primary color from the AppColors class
       ),
       body: _articles.isNotEmpty
           ? ListView.builder(
@@ -42,8 +43,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 return Column(
                   children: <Widget>[
                     ListTile(
-                      leading: const Icon(Icons.article,
-                          color: Colors.blue), // Use an appropriate icon
+                      leading: const Icon(
+                          Icons.article,
+                          color: AppColors.primaryColor), // Use an appropriate icon and primary color
                       title: Text(
                         article.title,
                         style: const TextStyle(fontWeight: FontWeight.bold),
@@ -59,8 +61,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ),
                         ],
                       ),
-                      trailing: const Icon(Icons
-                          .arrow_forward), // Icon for navigating to the full article
+                      trailing: const Icon(
+                          Icons.arrow_forward,
+                          color: AppColors.primaryColor), // Icon for navigating to the full article and primary color
                       // onTap: () => _openArticle(article.url),
                     ),
                     const Divider(), // Add a divider
