@@ -29,6 +29,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 title: "Buscar",
                 placeholder: "Escribe tu búsqueda aquí",
                 controller: searchController,
+                isPassword: false,
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(

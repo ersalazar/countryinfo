@@ -3,6 +3,7 @@ import 'package:countryinfo/data/models/user.dart';
 import 'package:countryinfo/ui/app_colors.dart';
 import 'package:countryinfo/ui/pages/dashboard.dart';
 import 'package:countryinfo/ui/pages/home_screen.dart';
+import 'package:countryinfo/ui/pages/home_screen_list_view.dart';
 import 'package:countryinfo/ui/pages/widgets/text_input_widget_with_title.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,8 @@ class LoginScreen extends StatelessWidget {
   final Authenticator authenticator = Authenticator();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  LoginScreen({super.key});
 
   Future<void> _login(BuildContext context) async {
     final username = emailController.text;
@@ -21,7 +24,8 @@ class LoginScreen extends StatelessWidget {
         // Authentication was successful, navigate to the HomeScreen
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
+          // MaterialPageRoute(builder: (context) => const HomeScreen()),
+          MaterialPageRoute(builder: (context) => const MyHomePage()),
         );
       } else {
         // Handle authentication failure (e.g., display an error message)
@@ -66,12 +70,14 @@ class LoginScreen extends StatelessWidget {
                 title: 'Email',
                 placeholder: 'youremail@yourcompany.com',
                 controller: emailController,
+                isPassword: false,
               ),
               const SizedBox(height: 16.0),
               TextInputWidgetWithTitle(
                 title: 'Password',
                 placeholder: '********',
                 controller: passwordController,
+                isPassword: true,
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
@@ -79,7 +85,7 @@ class LoginScreen extends StatelessWidget {
                   _login(context);
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: AppColors.accentColor,
+                  backgroundColor: AppColors.accentColor,
                 ),
                 child: const Text(
                   'Login',
