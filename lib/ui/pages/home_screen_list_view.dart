@@ -1,5 +1,5 @@
 import 'package:countryinfo/router/app_router.dart';
-import 'package:countryinfo/ui/app_colors.dart';
+
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -10,7 +10,6 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter App with Router'),
-        backgroundColor: AppColors.primaryColor,
       ),
       body: ListView.builder(
         itemCount: AppRoute.menuOptions.length,
@@ -19,7 +18,6 @@ class MyHomePage extends StatelessWidget {
           return ListTile(
             leading: Icon(
               option.icon,
-              color: AppColors.primaryColor,
             ),
             title: Text(option.name),
             onTap: () {

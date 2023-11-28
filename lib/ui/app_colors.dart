@@ -12,5 +12,30 @@ class AppColors {
   static const grey = Color(0xFFE0E0E0);
   static const lightGray = Color(0xFFDDDDDD);
 
+  static final ThemeData darkTheme =ThemeData.dark().copyWith(
+    primaryColor: primaryColor,
+    appBarTheme: const  AppBarTheme( color: primaryColor, elevation: 0.0),
+    scaffoldBackgroundColor: black,
+    textTheme: const TextTheme(
+          bodyLarge:
+              TextStyle(color: white, fontWeight: FontWeight.bold),
+          bodyMedium:
+              TextStyle(color: white))
+  );
+
+  static final ThemeData lightTheme = ThemeData.light().copyWith(
+      primaryColor: primaryColor,
+      appBarTheme: const AppBarTheme(color: primaryColor, elevation: 0),
+      scaffoldBackgroundColor: lightGray,
+      textTheme: const TextTheme(
+          bodyLarge:
+              TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          bodyMedium:
+              TextStyle(color: Colors.black)))
+    ;
+
+
+  
+
 
 }

@@ -1,8 +1,6 @@
 import 'package:countryinfo/blocs/auth/auth_bloc.dart';
 import 'package:countryinfo/data/models/user.dart';
-import 'package:countryinfo/ui/app_colors.dart';
-import 'package:countryinfo/ui/pages/dashboard.dart';
-import 'package:countryinfo/ui/pages/home_screen.dart';
+
 import 'package:countryinfo/ui/pages/home_screen_list_view.dart';
 import 'package:countryinfo/ui/pages/widgets/text_input_widget_with_title.dart';
 import 'package:flutter/material.dart';
@@ -57,10 +55,10 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
-        backgroundColor: AppColors.primaryColor,
+
       ),
       body: Container(
-        color: AppColors.white,
+
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
@@ -85,11 +83,11 @@ class LoginScreen extends StatelessWidget {
                   _login(context);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.accentColor,
+
                 ),
                 child: const Text(
                   'Login',
-                  style: TextStyle(color: AppColors.white),
+          
                 ),
               )
             ],

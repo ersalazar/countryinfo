@@ -1,4 +1,4 @@
-import 'package:countryinfo/ui/app_colors.dart';
+
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile"),
-        backgroundColor: AppColors.primaryColor, // Use the primary color from the AppColors class
+   
       ),
       body: Center(
         child: Column(
@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
               userBio,
               style: const TextStyle(
                 fontSize: 16,
-                color: Colors.grey,
+
               ),
             ),
             const SizedBox(height: 16.0),
@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
                 // Add functionality to edit the profile
               },
               style: ElevatedButton.styleFrom(
-                primary: AppColors.accentColor, // Use the accent color for the button
+         
               ),
               child: const Text("Edit Profile"),
             ),

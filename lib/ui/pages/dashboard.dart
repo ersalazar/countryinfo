@@ -10,7 +10,8 @@ class DashboardScreen extends StatefulWidget {
   _DashboardScreenState createState() => _DashboardScreenState();
 }
 
-class _DashboardScreenState extends State<DashboardScreen> {
+
+ class _DashboardScreenState extends State<DashboardScreen> {
   final NewsRepository _newsRepository = NewsRepository();
   late List<Article> _articles = [];
 
@@ -33,7 +34,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('News Dashboard'),
-        backgroundColor: AppColors.primaryColor, // Use the primary color from the AppColors class
+        // No need to set backgroundColor, it will inherit from the theme
       ),
       body: _articles.isNotEmpty
           ? ListView.builder(
@@ -44,8 +45,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   children: <Widget>[
                     ListTile(
                       leading: const Icon(
-                          Icons.article,
-                          color: AppColors.primaryColor), // Use an appropriate icon and primary color
+                        Icons.article,
+                        // No need to set color, it will inherit from the theme
+                      ),
                       title: Text(
                         article.title,
                         style: const TextStyle(fontWeight: FontWeight.bold),
@@ -57,16 +59,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           Text(
                             article.publishedAt,
                             style: const TextStyle(
-                                fontSize: 12, color: Colors.grey),
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
                           ),
                         ],
                       ),
                       trailing: const Icon(
-                          Icons.arrow_forward,
-                          color: AppColors.primaryColor), // Icon for navigating to the full article and primary color
+                        Icons.arrow_forward,
+                        // No need to set color, it will inherit from the theme
+                      ),
                       // onTap: () => _openArticle(article.url),
                     ),
-                    const Divider(), // Add a divider
+                    const Divider(),
                   ],
                 );
               },
