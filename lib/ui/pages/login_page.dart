@@ -1,7 +1,8 @@
 import 'package:countryinfo/blocs/auth/auth_bloc.dart';
 import 'package:countryinfo/data/models/user.dart';
+import 'package:countryinfo/ui/pages/home_screen.dart';
 
-import 'package:countryinfo/ui/pages/home_screen_list_view.dart';
+//import 'package:countryinfo/ui/pages/home_screen_list_view.dart';
 import 'package:countryinfo/ui/pages/widgets/text_input_widget_with_title.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +23,8 @@ class LoginScreen extends StatelessWidget {
         // Authentication was successful, navigate to the HomeScreen
         Navigator.pushReplacement(
           context,
-          // MaterialPageRoute(builder: (context) => const HomeScreen()),
-          MaterialPageRoute(builder: (context) => const MyHomePage()),
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+          //MaterialPageRoute(builder: (context) => const MyHomePage()),
         );
       } else {
         // Handle authentication failure (e.g., display an error message)

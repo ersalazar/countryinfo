@@ -4,8 +4,7 @@ import 'package:http/http.dart' as http;
 
 class Authenticator {
   Future<dynamic> authenticate(String username, String password) async {
-    print(username);
-    print(password);
+  
     final apiUrl = Uri.parse('https://dummyjson.com/auth/login');
     final response = await http.post(
       apiUrl,
@@ -17,7 +16,7 @@ class Authenticator {
         'password': password,
       }),
     );
-    print(response.statusCode);
+ 
 
     if (response.statusCode == 200) {
       User user = User.fromJson(jsonDecode(response.body));

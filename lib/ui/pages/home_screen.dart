@@ -1,6 +1,8 @@
 
-import 'package:countryinfo/ui/pages/dashboard.dart';
-import 'package:countryinfo/ui/pages/profile_screen.dart';
+
+import 'package:countryinfo/ui/pages/home_screen_list_view.dart';
+
+import 'package:countryinfo/ui/pages/recipe_types.dart';
 import 'package:countryinfo/ui/pages/search_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +18,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    const DashboardScreen(),
+    RecipeTypes(),
     const SearchScreen(),
-    const ProfileScreen(),
+    const MyHomePage(),
   ];
 
   @override
@@ -33,16 +35,16 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
+            icon: Icon(Icons.food_bank_outlined),
+            label: 'Recipes',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
           // Add items for other screens
         ],

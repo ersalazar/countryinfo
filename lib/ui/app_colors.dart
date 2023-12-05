@@ -20,19 +20,35 @@ class AppColors {
           bodyLarge:
               TextStyle(color: white, fontWeight: FontWeight.bold),
           bodyMedium:
-              TextStyle(color: white))
-  );
+              TextStyle(color: white)),
+              textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: primaryColor)),
+      floatingActionButtonTheme:
+          const FloatingActionButtonThemeData(backgroundColor: primaryColor),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+        backgroundColor: primaryColor,
+        shape: const StadiumBorder(),
+        
+  )));
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
       primaryColor: primaryColor,
       appBarTheme: const AppBarTheme(color: primaryColor, elevation: 0),
-      scaffoldBackgroundColor: lightGray,
-      textTheme: const TextTheme(
+      scaffoldBackgroundColor: Colors.white,
+      textTheme: const  TextTheme(
           bodyLarge:
               TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          bodyMedium:
-              TextStyle(color: Colors.black)))
-    ;
+          bodyMedium: TextStyle(color: Colors.black)),
+      textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: primaryColor)),
+      floatingActionButtonTheme:
+          const FloatingActionButtonThemeData(backgroundColor: primaryColor),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+        backgroundColor: primaryColor,
+        shape: const StadiumBorder(),
+      )));
 
 
   

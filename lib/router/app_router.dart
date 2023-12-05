@@ -1,8 +1,10 @@
 
 
 
-import 'package:countryinfo/models/menu_options.dart';
+import 'package:countryinfo/data/models/menu_options.dart';
+import 'package:countryinfo/ui/pages/config_screen.dart';
 import 'package:countryinfo/ui/pages/dashboard.dart';
+import 'package:countryinfo/ui/pages/payment_screen.dart';
 import 'package:countryinfo/ui/pages/profile_screen.dart';
 import 'package:countryinfo/ui/pages/search_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,22 +14,22 @@ class AppRoute {
 
   static final menuOptions = [
     MenuOption(
-      route: 'newsFeed',
-      icon: Icons.article,
-      name: 'News Feed',
-      screen: const DashboardScreen(),
-    ),
-    MenuOption(
-      route: 'search',
-      icon: Icons.search,
-      name: 'Search',
-      screen: const SearchScreen(),
+      route: 'configuration',
+      icon: Icons.settings,
+      name: 'Configuration',
+      screen: const ConfigScreen(),
     ),
     MenuOption(
       route: 'profile',
       icon: Icons.person,
       name: 'Profile',
       screen: const ProfileScreen(),
+    ),
+    MenuOption(
+      route: 'payment',
+      icon: Icons.article,
+      name: 'Payment',
+      screen: const PaymentScreen(),
     ),
     
   ];
@@ -43,8 +45,8 @@ class AppRoute {
   }
 
   static Map<String, Widget Function(BuildContext)> routes = {
-    '/newsFeed': (BuildContext context) => const DashboardScreen(),
-    '/search': (BuildContext context) => const SearchScreen(),
+    '/payment': (BuildContext context) => const DashboardScreen(),
+    '/configuration': (BuildContext context) => const SearchScreen(),
     '/profile': (BuildContext context) => const ProfileScreen(),
  
   };
